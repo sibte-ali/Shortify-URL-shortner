@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
     const [longUrl,setLongurl] = useState('');
@@ -57,8 +58,9 @@ const URL='http://localhost:8086/short';
           Shortify
         </h1>
         <div className="space-x-6 text-gray-300">
-          <a href="#" className="hover:text-white">Features</a>
-          <a href="#" className="hover:text-white">Login</a>
+        
+          <Link to='/About' className="hover:text-white">About</Link>
+          <Link to='/Auth' className="hover:text-white">Login</Link>
         </div>
       </nav>
 
