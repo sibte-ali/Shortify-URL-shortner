@@ -34,6 +34,16 @@ public class URLController {
                 .build();
 
     }
+     @GetMapping("/get-long-url/{shortUrl}")
+	    public ResponseEntity getLongUrl(@PathVariable("shortUrl") String shortUrl)
+	    {
+	        String longUrl = urlService.urlRedirect(shortUrl);
+	        System.out.println("long url " + longUrl);
+	        return  ResponseEntity.status(HttpStatus.FOUND)
+	                .location(URI.create(longUrl))
+	                .build();
+
+    }
 
 
 }
